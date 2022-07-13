@@ -69,6 +69,7 @@ class App extends Component {
     const getClientAvatar = `https://robohash.org/${getClientID}`;
 
     const slackChatProps = {
+      closeChatButton: true,
       botName: getClientID,
       channels: [
         {
