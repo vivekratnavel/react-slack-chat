@@ -29,7 +29,9 @@ $attachmentIcon: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAA
 }
 .chatIcon {
   color: $white;
-  padding-top: 13px;
+  padding-top: 15px;
+  width: 60px;
+  text-align: center;
 }
 .redDot {
   position: fixed;
@@ -406,13 +408,16 @@ $attachmentIcon: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAA
     text-shadow: 0.25em 0 0 $white, 0.5em 0 0 $white;
   }
 }
+.chat__input__container {
+  width: 340px;
+}
 .chat__input {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 75%;
+  width: 280px;
   height: 45px;
-  padding: 0.5rem 1rem 0.5rem 4rem;
+  padding: 5px 5px 5px 50px;
   background-repeat: no-repeat;
   background-position: 1rem 1rem;
   background-color: $color_athens_gray_approx;

@@ -627,6 +627,9 @@ class ReactSlackChat extends Component {
     if (this.state.failed) {
       return false;
     }
+    const themeStyle = {
+      backgroundColor: this.props.themeColor
+    }
     // Looks like nothing failed, let's start to render our chatbox
     const chatbox = (
       <div>
@@ -641,7 +644,7 @@ class ReactSlackChat extends Component {
         >
           {
             this.state.chatbox.active || this.state.chatbox.chatActiveView ?
-              <div className={styles.helpHeader}>
+              <div className={classNames(styles.helpHeader)} style={themeStyle}>
                 {this.state.newMessageNotification > 0 && (
                   <span className={styles.unreadNotificationsBadge}>
                 {this.state.newMessageNotification}
@@ -739,7 +742,7 @@ class ReactSlackChat extends Component {
                 </div>
               ) : null}
               {!this.state.fileUploadLoader ? (
-                <div>
+                <div className={styles.chat__input__container}>
                   <div className={styles.attachment}>
                     <label
                       htmlFor="chat__upload"
