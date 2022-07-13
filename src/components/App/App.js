@@ -21,7 +21,7 @@ class App extends Component {
     // strip secret
     let json = {
       ...data,
-      apiToken: 'xxxxx',
+      apiToken: 'eG94Yi0zNDAwNzQ0NjEwNzY5LTM3ODA3OTc3OTI3MjQtUXR0MnlhblRDcVZ0Ukw2WnRWMXZvdTBD',
     };
     json = JSON.stringify(json, undefined, 4);
 
@@ -72,28 +72,15 @@ class App extends Component {
       botName: getClientID,
       channels: [
         {
-          name: 'mac',
+          name: 'saas-help',
           icon: 'https://image.flaticon.com/icons/svg/141/141021.svg',
         },
-        {
-          name: 'pc',
-          icon: 'https://image.flaticon.com/icons/svg/224/224597.svg',
-        },
-        {
-          name: 'linux',
-          icon: 'https://image.flaticon.com/icons/svg/226/226772.svg',
-        },
-        {
-          name: 'test',
-          id: '',
-          icon: '',
-        },
       ],
-      apiToken: '==',
+      apiToken: 'eG94Yi0zNDAwNzQ0NjEwNzY5LTM3ODA3OTc3OTI3MjQtUXR0MnlhblRDcVZ0Ukw2WnRWMXZvdTBD',
       helpText: 'Need Help?',
       singleUserMode: false,
       defaultMessage: 'Welcome! Someone will help shortly.',
-      themeColor: '#856090',
+      themeColor: '#7147E8',
       debugMode: true,
       userImage: getClientAvatar,
       hooks: [

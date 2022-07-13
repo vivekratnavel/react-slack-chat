@@ -4,7 +4,8 @@ import classNames from 'classnames';
 
 import SlackBot from 'slack';
 import { load as emojiLoader, parse as emojiParser } from 'gh-emoji';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMessage } from '@fortawesome/free-solid-svg-icons'
 import styles from './ReactSlackChat.scss';
 
 import defaultChannelIcon from '../../assets/team.svg';
@@ -70,7 +71,7 @@ class ReactSlackChat extends Component {
     this.apiToken = atob(this.props.apiToken);
     // Create Bot
     this.bot = new SlackBot({ token: this.apiToken });
-    this.refreshTime = 5000;
+    this.refreshTime = 2000;
     this.chatInitiatedTs = '';
     this.activeChannel = [];
     this.activeChannelInterval = null;
@@ -631,23 +632,34 @@ class ReactSlackChat extends Component {
       <div>
         <div
           className={classNames(
-            styles.card,
+            styles.bubble,
             styles.transition,
             this.state.chatbox.active ? styles.active : '',
             this.state.chatbox.chatActiveView ? styles.chatActive : ''
           )}
           onClick={this.openChatBox}
         >
-          <div className={styles.helpHeader}>
-            {this.state.newMessageNotification > 0 && (
-              <span className={styles.unreadNotificationsBadge}>
+          {
+            this.state.chatbox.active || this.state.chatbox.chatActiveView ?
+              <div className={styles.helpHeader}>
+                {this.state.newMessageNotification > 0 && (
+                  <span className={styles.unreadNotificationsBadge}>
                 {this.state.newMessageNotification}
               </span>
-            )}
-            <h2 className={styles.transition}>
-              {this.state.helpText || 'Help?'}
-            </h2>
-          </div>
+                )}
+                <h2 className={styles.transition}>
+                  {this.state.helpText || 'Help?'}
+                </h2>
+              </div>
+            :
+              <div className={classNames(styles.chatIcon)}>
+                <FontAwesomeIcon icon={faMessage} size={"2x"}/>
+                {
+                  this.state.newMessageNotification > 0 && (
+                    <span className={styles.redDot}/>
+                )}
+              </div>
+          }
           <div className={classNames(styles.card_circle, styles.transition)} />
           <div
             className={classNames(

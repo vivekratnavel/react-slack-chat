@@ -27,20 +27,39 @@ $attachmentIcon: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAA
   //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
   transition: 0.8s cubic-bezier(0.3, 0, 0, 1.3);
 }
-.card {
-  background-color: $white;
+.chatIcon {
+  color: $white;
+  padding-top: 13px;
+}
+.redDot {
+  position: fixed;
+  right: 51px;
+  bottom: 61px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #fa3e3e;
+  display: inline-block;
+}
+.bubble {
+  background-color: $theme_color;
   //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
   box-shadow: 0 0 10px 2px $black_30;
   height: 60px;
   position: fixed;
   right: 40px;
-  bottom: 0;
-  width: 340px;
+  bottom: 20px;
+  width: 60px;
+  border-radius: 50%;
+  display: inline-block;
   cursor: pointer;
   &.active {
+    background-color: $white !important;
+    bottom: 0;
     cursor: default;
     height: 500px;
     width: 340px;
+    border-radius: 0;
     z-index: 99999;
     .card_circle {
       background-size: cover;
@@ -54,6 +73,7 @@ $attachmentIcon: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAA
       }
     }
     &.chatActive {
+      background-color: $white;
       .helpHeader {
         visibility: hidden;
         opacity: 0;
@@ -74,6 +94,7 @@ $attachmentIcon: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAA
       }
     }
     .subText {
+      background-color: $white;
       visibility: visible;
       //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
       transition: visibility 0s, opacity 0.5s linear;
@@ -120,7 +141,7 @@ $attachmentIcon: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAA
     font-family: $font_0, $font_3;
     font-size: 24px;
     font-weight: 200;
-    margin-top: 0;
+    margin: 0;
     text-align: center;
     width: 100%;
     z-index: 9999;
