@@ -652,10 +652,6 @@ class ReactSlackChat extends Component {
             :
               <div className={classNames(styles.chatIcon)}>
                 <FontAwesomeIcon icon={faMessage} size={"2x"}/>
-                {
-                  this.state.newMessageNotification > 0 && (
-                    <span className={styles.redDot}/>
-                )}
               </div>
           }
           <div className={classNames(styles.card_circle, styles.transition)} />
