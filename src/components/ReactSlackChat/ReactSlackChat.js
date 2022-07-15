@@ -645,11 +645,6 @@ class ReactSlackChat extends Component {
           {
             this.state.chatbox.active || this.state.chatbox.chatActiveView ?
               <div className={classNames(styles.helpHeader)} style={themeStyle}>
-                {this.state.newMessageNotification > 0 && (
-                  <span className={styles.unreadNotificationsBadge}>
-                {this.state.newMessageNotification}
-              </span>
-                )}
                 <h2 className={styles.transition}>
                   {this.state.helpText || 'Help?'}
                 </h2>

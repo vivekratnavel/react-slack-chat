@@ -29,9 +29,11 @@ $attachmentIcon: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAA
 }
 .chatIcon {
   color: $white;
-  padding-top: 15px;
-  width: 60px;
+  position: absolute;
   text-align: center;
+  left: 50%;
+  top: 53%;
+  transform: translate(-50%,-50%);
 }
 .redDot {
   position: fixed;
